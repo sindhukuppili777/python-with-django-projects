@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply Job</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f0f0f0;
+}
+
+.form-box{
+width:400px;
+margin:50px auto;
+background:white;
+padding:20px;
+border-radius:6px;
+box-shadow:0 0 8px gray;
+}
+
+input, textarea{
+width:93%;
+padding:10px;
+margin:8px 0;
+}
+
+button{
+background:green;
+color:white;
+border:none;
+padding:10px;
+width:100%;
+cursor:pointer;
+}
+
+button:hover{
+background:darkgreen;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="form-box">
+
+<h2>Apply for {{ job.title }}</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<button type="submit">Submit Application</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

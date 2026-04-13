@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Job List</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f4f4;
+margin:0;
+}
+
+.navbar{
+background:#333;
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.navbar a{
+color:white;
+margin-left:15px;
+text-decoration:none;
+}
+
+h1{
+text-align:center;
+margin-top:20px;
+}
+
+.job-card{
+background:white;
+width:60%;
+margin:20px auto;
+padding:20px;
+border-radius:6px;
+box-shadow:0 0 5px gray;
+}
+
+button{
+background:#007BFF;
+color:white;
+border:none;
+padding:8px 15px;
+cursor:pointer;
+border-radius:4px;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div>
+<b>Job Portal</b>
+</div>
+
+<div>
+
+<a href="/">Home</a>
+
+{% if user.is_authenticated %}
+
+<a href="{% url 'logout' %}">Logout</a>
+
+{% else %}
+
+<a href="{% url 'login' %}">Login</a>
+<a href="{% url 'register' %}">Register</a>
+
+{% endif %}
+
+</div>
+
+</div>
+
+<h1>Available Jobs</h1>
+
+{% for job in jobs %}
+
+<div class="job-card">
+
+<h2>{{ job.title }}</h2>
+<p><b>Company:</b> {{ job.company }}</p>
+<p><b>Location:</b> {{ job.location }}</p>
+<p>{{ job.description }}</p>
+
+{% if user.is_authenticated %}
+
+<a href="{% url 'apply_job' job.id %}">
+<button>Apply</button>
+</a>
+
+{% else %}
+
+<a href="{% url 'login' %}">
+<button>Login to Apply</button>
+</a>
+
+{% endif %}
+
+</div>
+
+{% endfor %}
+
+</body>
+</html>
