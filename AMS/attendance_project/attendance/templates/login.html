@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#2c3e50;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+form{
+background:white;
+padding:30px;
+border-radius:10px;
+width:300px;
+}
+
+input{
+width:93%;
+padding:10px;
+margin:10px 0;
+}
+
+button{
+width:100%;
+padding:10px;
+background:#3498db;
+color:white;
+border:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<form method="post">
+
+{% csrf_token %}
+
+<h2>Login</h2>
+
+{% if error %}
+<p style="color:red">{{error}}</p>
+{% endif %}
+
+<input type="text" name="username" placeholder="Username">
+
+<input type="password" name="password" placeholder="Password">
+
+<button type="submit">Login</button>
+
+
+<p style="text-align:center;margin-top:10px;">
+Don't have an account?
+<a href="/register/">Register</a>
+</p>
+</form>
+
+</body>
+
+</html>

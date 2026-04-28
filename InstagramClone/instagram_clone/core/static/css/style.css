@@ -1,0 +1,140 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#fafafa;
+}
+
+/* NAVBAR */
+
+.navbar{
+width:100%;
+height:60px;
+background:white;
+border-bottom:1px solid #dbdbdb;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 120px;
+position:fixed;
+top:0;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:black;
+font-weight:500;
+}
+
+.logout-btn{
+border:none;
+background:#0095f6;
+color:white;
+padding:6px 12px;
+border-radius:4px;
+cursor:pointer;
+}
+
+/* FEED */
+
+.feed{
+width:470px;
+margin:90px auto;
+}
+
+/* POST */
+
+.post{
+background:white;
+border:1px solid #dbdbdb;
+margin-bottom:25px;
+border-radius:6px;
+}
+
+.post-header{
+padding:12px;
+font-weight:bold;
+}
+
+.post-image{
+width:100%;
+}
+
+.post-actions{
+padding:10px;
+font-size:22px;
+}
+
+.likes{
+padding:0 10px;
+font-weight:bold;
+}
+
+.caption{
+padding:10px;
+}
+
+.comment-box{
+border-top:1px solid #eee;
+padding:10px;
+display:flex;
+}
+
+.comment-box input{
+flex:1;
+border:none;
+outline:none;
+}
+
+.comment-box button{
+border:none;
+background:none;
+color:#0095f6;
+font-weight:bold;
+cursor:pointer;
+}
+
+
+/* body{
+    background:#fafafa;
+    font-family: Arial, sans-serif;
+}
+
+.login-container{
+    width:350px;
+    margin:100px auto;
+    padding:40px;
+    background:white;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+input{
+    width:90%;
+    padding:10px;
+    margin:10px;
+    border:1px solid #ccc;
+}
+
+button{
+    background:#3897f0;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    cursor:pointer;
+} */

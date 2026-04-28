@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#34495e;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+form{
+background:white;
+padding:30px;
+border-radius:10px;
+width:300px;
+}
+
+input{
+width:95%;
+padding:10px;
+margin:10px 0;
+}
+
+button{
+width:100%;
+padding:10px;
+background:green;
+color:white;
+border:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<form method="post">
+
+{% csrf_token %}
+
+<h2>Register</h2>
+
+{% if error %}
+<p style="color:red">{{error}}</p>
+{% endif %}
+
+<input type="text" name="username" placeholder="Username">
+
+<input type="email" name="email" placeholder="Email">
+
+<input type="password" name="password" placeholder="Password">
+
+<button type="submit">Register</button>
+
+<p style="text-align:center;">
+Already have an account?
+<a href="/login/">Login</a>
+</p>
+
+</form>
+
+</body>
+
+</html>

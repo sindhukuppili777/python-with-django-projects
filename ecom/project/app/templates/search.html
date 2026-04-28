@@ -1,0 +1,32 @@
+{% extends "base.html" %} 
+{% block body %}
+<div class="container">
+  <div class="text-center">Search result</div>
+  <div class="row">
+    {% for d in post %}
+    <div class="col-3">
+      <div class="card-group">
+        <div class="card">
+          <img
+            src="{{d.pics.url}}"
+            class="card-img-top"
+            alt="..."
+            
+          />
+          <div class="card-body">
+            <h5 class="card-title">Name:{{d.pname}}</h5>
+            <p class="card-text">price:{{d.price}}</p>
+            <a
+              type="button"
+              href="/vcart/{{d.id}}"
+              class="btn btn-outline-success"
+              >add to cart</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock body %}

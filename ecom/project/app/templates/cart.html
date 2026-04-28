@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="col-md-12">
+  <h2 class="text-center text-white bg-dark p-3">Cart Details</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">price</th>
+        <th scope="col">Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for item in cart_items %}
+      <tr>
+        <th scope="row"><img src="{{item.product.pics.url}}"  alt="##$$" height="50px" width="50px"></th>
+        <td>{{ item.product.pname }}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.product.price}}</td>
+        <td><a type="button"  href="/dcart/{{item.id}}" class="btn btn-outline-danger">Remove</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <p class="text-center">Total Price: {{ total_price }}rs</p>
+</div>
+{% endblock body %}

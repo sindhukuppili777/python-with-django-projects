@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<style>
+    body{
+    font-family: Arial;
+    background:#fafafa;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+form{
+    margin-top:40px;
+}
+
+input{
+    display:block;
+    /* margin:10px auto; */
+    padding:5px;
+    margin-left: 23px;
+   
+}
+
+button{
+    padding:10px 20px;
+    background:#0095f6;
+    color:white;
+    border:none;
+    margin-top: 10px;
+}
+input[type="file"]{
+    margin:10px auto;
+    padding:10px;
+}
+
+input[type="file"]::file-selector-button{
+    padding:10px 20px;
+    background:#0095f6;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+    <h2>Upload Photo</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+<input type="file" name="image">
+
+<input type="text" name="caption" placeholder="caption">
+
+<button type="submit">Upload</button>
+
+</form>
+
+
+</body>
+</html>

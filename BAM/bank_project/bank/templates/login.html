@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Login</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background:#e9ecef;
+}
+
+.container{
+    width:350px;
+    margin:120px auto;
+    background:white;
+    padding:30px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align:center;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #ccc;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#007bff;
+    color:white;
+    border:none;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+.register{
+    text-align:center;
+    margin-top:15px;
+}
+
+.register a{
+    color:#007bff;
+    text-decoration:none;
+}
+
+.register a:hover{
+    text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Bank Login</h2>
+
+<form method="post">
+{% csrf_token %}
+
+<input type="text" name="username" placeholder="Username">
+
+<input type="password" name="password" placeholder="Password">
+
+<button type="submit">Login</button>
+
+</form>
+
+<div class="register">
+<p>Don't have an account? <a href="/register/">Register</a></p>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+<title>Transactions</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background:#f4f6f9;
+}
+
+table{
+    width:70%;
+    margin:50px auto;
+    border-collapse:collapse;
+}
+
+th,td{
+    border:1px solid #ccc;
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:#007bff;
+    color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2 style="text-align:center;">Transaction History</h2>
+
+<table>
+
+<tr>
+<th>Type</th>
+<th>Amount</th>
+<th>Date</th>
+</tr>
+
+{% for t in transactions %}
+
+<tr>
+<td>{{t.transaction_type}}</td>
+<td>{{t.amount}}</td>
+<td>{{t.date}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Withdraw</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background:#eef2f7;
+}
+
+.container{
+    width:350px;
+    margin:120px auto;
+    background:white;
+    padding:30px;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#dc3545;
+    color:white;
+    border:none;
+}
+
+input{
+    width:93%;
+    padding:10px;
+    margin:10px 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Withdraw Money</h2>
+
+<form method="post">
+{% csrf_token %}
+
+<input type="number" name="amount" placeholder="Enter Amount">
+
+<button type="submit">Withdraw</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
